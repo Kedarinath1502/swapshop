@@ -20,10 +20,12 @@ export async function SellYourItemAction(prevState: any, formData: FormData) {
     console.log(formData.get('price'));
     console.log(formData.get('imageUrl'));
     console.log(formData.get('contactEmail'));
+    console.log(formData.get('condition'));
+    console.log(formData.get('location'));
 
     const schema = z.object({
-        name: z.string().min(6),
-        description: z.string().min(10),
+        name: z.string().min(3),
+        description: z.string().min(5),
         contactEmail: z.string().min(1).email('This is not a valid email address'),
         price: z.string().min(1),
         imageUrl: z
@@ -33,6 +35,8 @@ export async function SellYourItemAction(prevState: any, formData: FormData) {
                 (file) => ACCEPTED_IMAGE_TYPES.includes(file?.type),
                 'Only .jpg, .jpeg, .png and .webp formats are supported.'
             ),
+        condition: z.string().min(1),
+        location: z.string().min(1),
     });
     const validatedFields = schema.safeParse({
         name: formData.get('name'),
@@ -40,6 +44,8 @@ export async function SellYourItemAction(prevState: any, formData: FormData) {
         contactEmail: formData.get('contactEmail'),
         price: formData.get('price'),
         imageUrl: formData.get('imageUrl'),
+        condition: formData.get('condition'),
+        location: formData.get('location')
     });
 
     if (!validatedFields.success) {
@@ -50,7 +56,7 @@ export async function SellYourItemAction(prevState: any, formData: FormData) {
         };
     }
 
-    const { name, description, price, imageUrl, contactEmail } = validatedFields.data;
+    const { name, description, price, imageUrl, contactEmail, condition, location } = validatedFields.data;
 
     try {
         const filename = `${Math.random()}-${imageUrl.name}`
@@ -76,7 +82,7 @@ export async function SellYourItemAction(prevState: any, formData: FormData) {
             const path = data.path
             const { data: products, error: ErrorProduct } = await supabase
                 .from("sell-products")
-                .insert({ name, description, price, imageUrl: path, contactEmail });
+                .insert({ name, description, price, imageUrl: path, contactEmail, condition, location });
             console.log(products)
             if (ErrorProduct) {
                 return {

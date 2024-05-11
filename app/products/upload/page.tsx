@@ -14,8 +14,8 @@ const UploadFormPage: React.FC = () => {
     return (
         <div >
             <Header />
-            <div className="px-12 pt-24 pb-12 min-h-screen max-w-[100rem] mx-auto flex gap-56">
-                <div>
+            <div className="px-12 pt-2 pb-12 min-h-screen max-w-[100rem] mx-auto ">
+                <div className="pb-4">
                     <h2 className="text-2xl lg:text-4xl mb-4 uppercase pt-12">
                         Sell your Item!
                     </h2>
@@ -32,7 +32,7 @@ const UploadFormPage: React.FC = () => {
                     <form action={formAction}>
                         <div className="mb-6">
                             <label htmlFor="name" className="block mb-2">
-                                Name
+                                Product Name
                             </label>
                             <input type="text" id="name" name="name" />
                             {state?.errors?.name && (
@@ -86,6 +86,28 @@ const UploadFormPage: React.FC = () => {
                             {state?.errors?.contactEmail && (
                                 <span id="name-error" className="text-red-600 text-sm">
                                     {state.errors.contactEmail.join(',')}
+                                </span>
+                            )}
+                        </div>
+                        <div className="mb-6">
+                            <label htmlFor="condition" className="block mb-2">
+                                Condition
+                            </label>
+                            <input type="text" id="condition" placeholder="Brand-new/used.." name="condition" />
+                            {state?.errors?.name && (
+                                <span id="name-error" className="text-red-600 text-sm">
+                                    {state.errors.name.join(',')}
+                                </span>
+                            )}
+                        </div>
+                        <div className="mb-6">
+                            <label htmlFor="location" className="block mb-2">
+                                Locaion
+                            </label>
+                            <input type="text" id="location" name="location" />
+                            {state?.errors?.name && (
+                                <span id="name-error" className="text-red-600 text-sm">
+                                    {state.errors.name.join(',')}
                                 </span>
                             )}
                         </div>
