@@ -4,7 +4,7 @@ export default function Footer({ font }: { font?: string }) {
             <div
                 className={`max-w-[100rem] px-12 mx-auto  ${font}`}
             >
-                <p className="text-xl">© swapshop</p>
+                <p className="text-xl">© Swapshop</p>
             </div>
         </footer>
     );
