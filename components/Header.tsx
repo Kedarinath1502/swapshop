@@ -63,14 +63,14 @@ export default function Header({ font }: { font?: string }) {
                     onClick={handleUpload}
                     className="uppercase text-green-951 text-xl py-2 hover:text-yellow-700 cursor-pointer"
                 >
-                    Upload {'>'}
+                    Sell
                 </label>
                 {authenticatedUser ? (
-                    <button onClick={handleSignOut} className="uppercase text-red-600 text-xl py-2 hover:text-red-700 cursor-pointer">
+                    <button onClick={handleSignOut} className="uppercase text-red-600 text-lg py-2 hover:text-red-700 cursor-pointer">
                         Logout
                     </button>
                 ) : (
-                    <button onClick={handleSignIn} className="uppercase text-green-951 text-xl py-2 hover:text-yellow-700 cursor-pointer">
+                    <button onClick={handleSignIn} className="uppercase text-green-951 text-lg py-2 hover:text-yellow-700 cursor-pointer">
                         Login
                     </button>
                 )}
