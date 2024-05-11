@@ -1,4 +1,5 @@
 import Card from "@/components/Card";
+import Header from "@/components/Header";
 import { createClient } from "@/supabase/client";
 import { notFound } from "next/navigation";
 
@@ -41,7 +42,9 @@ export default async function Home() {
   //   }
   // ]
   return (
+
     <main className="min-h-screen mx-auto max-w-[100rem] ">
+      <Header />
       <div className="px-12 pt-12 pb-20">
         <div className="flex flex-col xl:flex-row gap-2 xl:gap-40">
           <div className="pt-12">

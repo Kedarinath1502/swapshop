@@ -7,16 +7,14 @@
     @apply text-2xl m-0 p-0;
   }
 
-  button {
-    @apply bg-pink-300 px-7 py-2 rounded-xl text-xl shadow-xl shadow-gray-300 hover:bg-pink-500;
-  }
+
 
   input {
-    @apply border-2 w-full rounded-lg h-12 outline-dashed outline-green-951;
+    @apply border-2 w-full rounded-lg h-12  outline-green-951;
   }
 
   textarea {
-    @apply border-2 w-full rounded-lg h-16 outline-dashed outline-green-951;
+    @apply border-2 w-full rounded-lg h-16  outline-green-951;
   }
 
   header {
