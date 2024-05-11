@@ -88,10 +88,10 @@ const Signup: React.FC = () => {
                     </div>
                 </form>
                 <div className="mt-4 text-sm text-center">
-                    Already have an account?{' '}
+                    Already have an account?
                     <button
                         onClick={() => router.push('/auth/signin')}
-                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                        className="font-medium text-indigo-600 hover:text-indigo-500 px-2"
                     >
                         Sign in
                     </button>
