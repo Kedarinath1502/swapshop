@@ -23,15 +23,7 @@ export async function generateStaticParams() {
 }
 
 export default async function ProductPage({ params }: Props) {
-    // const data =    {
-    //         id: 1,
-    //         name: "jeep rubicon ",
-    //         description: "it is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeep",
-    //         price: 40000,
-    //         contactEmail: "nathgvsk@gmail.com",
-    //         imageUrl: "https://imgd.aeplcdn.com/664x374/n/enfqg3a_1573837.jpg?q=80",
-    //         boost: true
-    //     }
+
     const supabase = createClient();
     const { data } = await supabase
         .from("sell-products")
@@ -69,7 +61,7 @@ export default async function ProductPage({ params }: Props) {
                     <div className="bg-gray-953 p-2 w-full">
                         <label className="font-bold">💰 PRICE:</label>
                         <p className="text-gray-800 text-2xl lg:text-3xl pt-4 py-6 text-center border-b-2 decoration-dotted border-dashed border-gray-800 border-opacity-15">
-                            ${data.price}
+                            ₹{data.price}
                         </p>
 
                         {data.Boost && (
@@ -87,7 +79,7 @@ export default async function ProductPage({ params }: Props) {
                             </p>
                         </div>
                         <div className="pt-2">
-                            <label className="font-bold pl-4"> 📍 Location</label>
+                            <label className="font-bold pl-4"> 📍 Delivery Locations</label>
                             <p className="text-gray-800 text-2xl lg:text-3xl pt-4 py-6 text-center ">
                                 {data.location}
                             </p>

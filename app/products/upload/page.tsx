@@ -102,7 +102,7 @@ const UploadFormPage: React.FC = () => {
                         </div>
                         <div className="mb-6">
                             <label htmlFor="location" className="block mb-2">
-                                Locaion
+                                Locaion (can be delivered)
                             </label>
                             <input type="text" id="location" name="location" />
                             {state?.errors?.name && (
