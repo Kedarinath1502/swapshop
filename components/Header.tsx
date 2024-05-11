@@ -55,8 +55,8 @@ export default function Header({ font }: { font?: string }) {
         <header className="py-2 bg-gray-952">
             <div className="max-w-[100rem] px-12 mx-auto flex justify-between">
                 <Link href="/">
-                    <h1 className={`uppercase text-yellow-500 text-center py-2 ${font}`}>
-                        BUY&SELL
+                    <h1 className={` text-yellow-500 text-center py-2 ${font}`}>
+                        SwapShop
                     </h1>
                 </Link>
                 <label

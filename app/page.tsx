@@ -15,32 +15,13 @@ export default async function Home() {
   const { data: products, error } = await supabase
     .from('sell-products')
     .select()
+    .order('created_at', { ascending: false })
 
   if (!products) {
     return notFound();
   }
 
-  // const products = [
-  //   {
-  //     id: 1,
-  //     name: "jeep rubicon it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep",
-  //     description: "it is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeep",
-  //     price: 40000,
-  //     imageUrl: "https://imgd.aeplcdn.com/664x374/n/enfqg3a_1573837.jpg?q=80"
-  //   }, {
-  //     id: 2,
-  //     name: "jeep rubicon it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep",
-  //     description: "it is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeep",
-  //     price: 40000,
-  //     imageUrl: "https://imgd.aeplcdn.com/664x374/n/enfqg3a_1573837.jpg?q=80"
-  //   }, {
-  //     id: 3,
-  //     name: "jeep rubicon it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep it is a luxuorious rubicon jeep",
-  //     description: "it is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeepit is a luxuorious rubicon jeep",
-  //     price: 40000,
-  //     imageUrl: "https://imgd.aeplcdn.com/664x374/n/enfqg3a_1573837.jpg?q=80"
-  //   }
-  // ]
+
   return (
 
     <main className="min-h-screen mx-auto max-w-[100rem] ">
@@ -49,7 +30,7 @@ export default async function Home() {
         <div className="flex flex-col xl:flex-row gap-2 xl:gap-40">
           <div className="pt-12">
             <h2 className="text-4xl mb-16">OUR TOP PRODUCTS</h2>
-            <p className="text-xl">You can pay to boost your products here.</p>
+            <p className="text-xl">Our top products which are trending</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 xl:gap-12">
             {topproducts ?
